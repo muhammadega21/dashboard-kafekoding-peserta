@@ -1,13 +1,19 @@
 // Dropdown Sidebar
-$(".side-class .sideClass-link").click(function (e) {
-  $(".side-class ").toggleClass("active");
-  $(".side-class .sideClass-link").toggleClass("active");
+document.querySelectorAll(".side-class .sideClass-link").forEach((el) => {
+  el.addEventListener("click", function (e) {
+    document
+      .querySelectorAll(".side-class")
+      .forEach((el) => el.classList.toggle("active"));
+    document
+      .querySelectorAll(".side-class .sideClass-link")
+      .forEach((el) => el.classList.toggle("active"));
+  });
 });
 
 // Assigment class
 
-$(".assigment-list .action .btn >").each(function (i) {
-  $(this).on("click", function () {
-    $(this).closest(".assigment-list").toggleClass("active");
+document.querySelectorAll(".assigment-list .action .btn >").forEach((el) => {
+  el.addEventListener("click", function () {
+    this.closest(".assigment-list").classList.toggle("active");
   });
 });
